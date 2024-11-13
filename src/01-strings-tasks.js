@@ -237,8 +237,35 @@ function getRectangleString(width, height) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const uperAlfabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // 26
+  const lowerAlfabet = 'abcdefghijklmnopqrstuvwxyz';
+  let finalPassword = '';
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < str.length; i++) {
+    if (uperAlfabet.includes(str[i])) {
+      const index = uperAlfabet.indexOf(str[i]) + 13;
+      if (index >= 26) {
+        // eslint-disable-next-line no-unused-vars
+        finalPassword += uperAlfabet[index - 26];
+      } else {
+        finalPassword += uperAlfabet[index];
+      }
+    } else if (lowerAlfabet.includes(str[i])) {
+      const index = lowerAlfabet.indexOf(str[i]) + 13;
+      if (index >= 26) {
+        // eslint-disable-next-line no-unused-vars
+        finalPassword += lowerAlfabet[index - 26];
+      } else {
+        // eslint-disable-next-line no-unused-vars
+        finalPassword += lowerAlfabet[index];
+      }
+    } else {
+      // eslint-disable-next-line no-unused-vars
+      finalPassword += str[i];
+    }
+  }
+  return finalPassword;
 }
 
 /**
