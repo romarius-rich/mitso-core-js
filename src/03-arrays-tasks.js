@@ -468,8 +468,20 @@ function sortCitiesArray(arr) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const finalMass = [];
+  const exampleMass = [];
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < n; i++) {
+    exampleMass.push(0);
+  }
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < n; i++) {
+    exampleMass.splice(i, 1, 1);
+    finalMass.push(JSON.parse(JSON.stringify(exampleMass)));
+    exampleMass.splice(i, 1, 0);
+  }
+  return finalMass;
 }
 
 /**
