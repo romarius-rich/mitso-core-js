@@ -497,8 +497,13 @@ function getIdentityMatrix(n) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  const finalMass = [];
+  // eslint-disable-next-line no-plusplus
+  for (let i = start; i < end + 1; i++) {
+    finalMass.push(i);
+  }
+  return finalMass;
 }
 
 /**
