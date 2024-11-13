@@ -260,8 +260,15 @@ function getMovingSum(arr) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  const finalMass = [];
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2 !== 0) {
+      finalMass.push(arr[i]);
+    }
+  }
+  return finalMass;
 }
 
 /**
