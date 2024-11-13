@@ -63,6 +63,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
+// eslint-disable-next-line consistent-return
 function extractNameFromTemplate(value) {
   let str = '';
   // eslint-disable-next-line no-plusplus
