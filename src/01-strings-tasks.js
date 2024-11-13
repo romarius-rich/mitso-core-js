@@ -114,8 +114,14 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+function repeatString(value, count) {
+  let str = '';
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < count; i++) {
+    // eslint-disable-next-line no-unused-vars
+    str += value;
+  }
+  return str;
 }
 
 /**
