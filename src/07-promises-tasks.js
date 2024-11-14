@@ -98,8 +98,19 @@ function getFastestPromise(array) {
  *    });
  *
  */
-function chainPromises(/* array, action */) {
-  throw new Error('Not implemented');
+async function chainPromises(array, action) {
+  let result = null;
+  // eslint-disable-next-line no-restricted-syntax
+  for (const promise of array) {
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      const value = await promise;
+      result = result === null ? value : action(result, value);
+    } catch (error) {
+      // Handle promise rejection if needed
+    }
+  }
+  return result;
 }
 
 module.exports = {
