@@ -50,8 +50,14 @@ function getFizzBuzz(num) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  let count = 1;
+  // eslint-disable-next-line no-plusplus
+  for (let i = 1; i < n + 1; i++) {
+    // eslint-disable-next-line no-unused-vars
+    count *= i;
+  }
+  return count;
 }
 
 /**
